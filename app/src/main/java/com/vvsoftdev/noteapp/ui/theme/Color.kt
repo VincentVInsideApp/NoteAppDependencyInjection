@@ -1,4 +1,4 @@
-package com.vvsoftdev.noteapp.theme
+package com.vvsoftdev.noteapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
