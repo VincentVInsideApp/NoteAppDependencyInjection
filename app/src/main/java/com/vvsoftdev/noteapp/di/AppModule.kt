@@ -7,7 +7,7 @@ import com.vvsoftdev.noteapp.feature_note.domain.repository.NoteRepositoryImpl
 import com.vvsoftdev.noteapp.feature_note.domain.usecase.*
 import com.vvsoftdev.noteapp.feature_note.presentation.add_edit_note.AddEditNoteViewModel
 import com.vvsoftdev.noteapp.feature_note.presentation.notes.NotesViewModel
-import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -15,11 +15,16 @@ val appModule = module {
     // room database
     single {
         Room.databaseBuilder(
-            androidContext(),
-            NoteDatabase::class.java, NoteDatabase.DATABASE_NAME
+            androidApplication(),
+            NoteDatabase::class.java,
+            NoteDatabase.DATABASE_NAME
         ).build()
     }
-    single { get<NoteDatabase>().noteDao }
+
+    single {
+        val database = get<NoteDatabase>()
+        database.noteDao
+    }
 
     // repository
     single<NoteRepository> { NoteRepositoryImpl(get()) }
