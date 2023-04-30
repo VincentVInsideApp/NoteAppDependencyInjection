@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.vvsoftdev.noteapp"
         minSdk 21
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -33,7 +33,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
     }
     buildFeatures {
         compose true
@@ -82,9 +81,9 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:1.0.0"
 
     // Room
-    implementation "androidx.room:room-runtime:2.3.0"
-    kapt "androidx.room:room-compiler:2.3.0"
+    implementation "androidx.room:room-runtime:2.5.1"
+    kapt "androidx.room:room-compiler:2.5.1"
 
     // Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:2.3.0"
+    implementation "androidx.room:room-ktx:2.5.1"
 }
