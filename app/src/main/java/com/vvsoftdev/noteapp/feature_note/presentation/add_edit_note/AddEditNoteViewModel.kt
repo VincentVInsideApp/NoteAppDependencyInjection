@@ -9,16 +9,13 @@ import androidx.lifecycle.viewModelScope
 import com.vvsoftdev.noteapp.feature_note.domain.model.InvalidNoteException
 import com.vvsoftdev.noteapp.feature_note.domain.model.Note
 import com.vvsoftdev.noteapp.feature_note.domain.usecase.NoteUseCases
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class AddEditNoteViewModel @Inject constructor(
+class AddEditNoteViewModel constructor(
     private val noteUseCases: NoteUseCases,
-    savedStateHandle: SavedStateHandle // Hilt doing the magic here
+    savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     // separate state in order to not recompose all UI when a single character is typed in TextField

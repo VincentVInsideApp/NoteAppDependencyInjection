@@ -14,18 +14,18 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.vvsoftdev.noteapp.feature_note.presentation.notes.components.NoteItem
 import com.vvsoftdev.noteapp.feature_note.presentation.notes.components.OrderSection
 import com.vvsoftdev.noteapp.feature_note.presentation.util.Screen
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.getViewModel
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun NotesScreen(
     navController: NavController,
-    viewModel: NotesViewModel = hiltViewModel()
+    viewModel: NotesViewModel = getViewModel()
 ) {
     val state = viewModel.state.value
     val scaffoldState = rememberScaffoldState()
