@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.vvsoftdev.noteapp.R
 import com.vvsoftdev.noteapp.feature_note.domain.model.InvalidNoteException
 import com.vvsoftdev.noteapp.feature_note.domain.model.Note
 import com.vvsoftdev.noteapp.feature_note.domain.usecase.NoteUseCases
@@ -23,12 +24,12 @@ class AddEditNoteViewModel @Inject constructor(
 
     // separate state in order to not recompose all UI when a single character is typed in TextField
     private val _noteTitle = mutableStateOf(NoteTextFieldState(
-        hint = "Enter title..."
+        hintTextId = R.string.add_note_title
     ))
     val noteTitle: State<NoteTextFieldState> = _noteTitle
 
     private val _noteContent = mutableStateOf(NoteTextFieldState(
-        hint = "Enter some content..."
+        hintTextId = R.string.add_note_content
     ))
     val noteContent: State<NoteTextFieldState> = _noteContent
 

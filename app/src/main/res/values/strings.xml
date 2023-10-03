@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">CleanArchitectureNoteApp</string>
+    <string name="app_name">Note App</string>
+    <string name="home_title">Your notes</string>
+    <string name="filter_title">Title</string>
+    <string name="filter_date">Date</string>
+    <string name="filter_color">Color</string>
+    <string name="filter_ascending">Ascending</string>
+    <string name="filter_descending">Descending</string>
+    <string name="add_note_title">Enter title</string>
+    <string name="add_note_content">Enter some content…</string>
+    <string name="add_note_error">The title of the note can not be empty</string>
+    <string name="delete_note">Note deleted</string>
+    <string name="undo">Undo</string>
 </resources>

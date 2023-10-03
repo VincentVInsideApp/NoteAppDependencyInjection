@@ -20,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Creates a button that mimics a crash when pressed
         setContent {
             CleanArchitectureNoteAppTheme {
                 Surface(
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
                         startDestination = Screen.NotesScreen.route
                     ) {
                         composable(route = Screen.NotesScreen.route) {
-                            NotesScreen(navController = navController)
+                            NotesScreen(navController = navController, context = applicationContext)
                         }
                         composable(
                             route = Screen.AddEditNoteScreen.route +

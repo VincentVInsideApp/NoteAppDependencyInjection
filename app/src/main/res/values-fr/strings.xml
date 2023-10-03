@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Note App</string>
+    <string name="home_title">Vos notes</string>
+    <string name="filter_title">Titre</string>
+    <string name="filter_date">Date</string>
+    <string name="filter_color">Couleur</string>
+    <string name="filter_ascending">Croissant</string>
+    <string name="filter_descending">Décroissant</string>
+    <string name="add_note_title">Entrez un titre</string>
+    <string name="add_note_content">Entrez du contenu…</string>
+    <string name="add_note_error">Le titre ne peut pas être vide</string>
+    <string name="delete_note">Note supprimée</string>
+    <string name="undo">Annuler</string>
+</resources>
