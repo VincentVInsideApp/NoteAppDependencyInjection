@@ -2,6 +2,7 @@ package com.vvsoftdev.noteapp.feature_note.presentation.notes
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import androidx.compose.animation.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -19,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.vvsoftdev.noteapp.FlutterHostActivity
 import com.vvsoftdev.noteapp.R
 import com.vvsoftdev.noteapp.feature_note.presentation.notes.components.NoteItem
 import com.vvsoftdev.noteapp.feature_note.presentation.notes.components.OrderSection
@@ -105,6 +107,7 @@ fun NotesScreen(
                             },
                         onDeleteClick = {
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
+
                             scope.launch {
                                 val result = scaffoldState.snackbarHostState.showSnackbar(
                                     message = context.getString(R.string.delete_note),
@@ -117,6 +120,16 @@ fun NotesScreen(
                         }
                     )
                     Spacer(modifier = Modifier.height(16.dp))
+                    Button(
+                        onClick = {
+                            val intent = FlutterHostActivity.newIntent(context, note.title)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            context.startActivity(intent)
+                        }
+                    )
+                    {
+                        Text(text = "navigate to flutter")
+                    }
                 }
             }
         }
