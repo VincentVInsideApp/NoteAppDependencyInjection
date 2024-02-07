@@ -24,6 +24,9 @@ android {
     }
 
     buildTypes {
+        profile {
+            initWith debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -90,4 +93,8 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.5.1"
+
+    debugImplementation 'com.vvsoftdev.sample:flutter_debug:1.0'
+    profileImplementation 'com.vvsoftdev.sample:flutter_profile:1.0'
+    releaseImplementation 'com.vvsoftdev.sample:flutter_release:1.0'
 }
